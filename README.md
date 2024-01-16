@@ -47,14 +47,14 @@ npm run lint
 ### 註冊component時出現警告該怎麼辦?
 
 請詳細看這個網站
-https://eslint.vuejs.org/rules/multi-word-component-names.html
+[eslint.vuejs.org - Multi-Word Component Names](https://eslint.vuejs.org/rules/multi-word-component-names.html)  
 主要注意式雙駝峰式命名ex: ExampleComponent 或是 example-component
 
 ### tailwind
 
-請先安裝 vscode插件 Tailwind CSS IntelliSense
-可以節省很多查詢語法的時間
-注意: 要寫全域css的話請到 ./assets/scss/style.scss
-打開style.scss有報錯的話請打開settings搜尋css點擊左邊SCSS(Sass)選項，然後找到
-SCSS › Lint: Unknown At Rules
+請先安裝 vscode插件 Tailwind CSS IntelliSense  
+可以節省很多查詢語法的時間  
+注意: 要寫全域css的話請到 ./assets/scss/style.scss  
+打開style.scss有報錯的話請打開settings搜尋css點擊左邊SCSS(Sass)選項，然後找到  
+SCSS › Lint: Unknown At Rules  
 請設為ignore
