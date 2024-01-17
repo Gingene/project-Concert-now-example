@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as t,a as s}from"./index-Dqx1J668.js";const a={},c={class:"about container mx-auto"},n=s("h1",null,"This is an about page",-1),_=[n];function r(i,d){return t(),o("div",c,_)}const l=e(a,[["render",r]]);export{l as default};
