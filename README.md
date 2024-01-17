@@ -46,10 +46,12 @@ npm run lint
 
 ### 註冊component時出現警告該怎麼辦?
 
+
 詳細請看這個網站  
 [eslint.vuejs.org - Multi-Word Component Names](https://eslint.vuejs.org/rules/multi-word-component-names.html)  
 主要注意式雙駝峰式命名ex: ExampleComponent 或是 example-component  
 可以的話增加name屬性
+
 
 ### tailwind
 
