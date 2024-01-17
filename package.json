@@ -13,8 +13,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "axios": "^1.6.5",
     "gh-pages": "^6.1.1",
     "pinia": "^2.1.7",
+    "sweetalert2": "^11.10.3",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },

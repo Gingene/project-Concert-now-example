@@ -1,25 +1,28 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/silverfungi">Test</RouterLink>
-      </nav>
+  <header class="container mx-auto flex justify-between p-4">
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
+    <div class="logo">
+      <RouterLink to="/">
+        <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="40" height="40" />
+      </RouterLink>
     </div>
+
+    <nav>
+      <RouterLink to="/" class="px-4">Home</RouterLink>
+      <RouterLink to="/about" class="px-4">About</RouterLink>
+      <RouterLink to="/silverfungi" class="px-4">銀光菇</RouterLink>
+    </nav>
   </header>
 
   <RouterView />
 </template>
 
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+</script>
+
 <style scoped>
-header {
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -79,5 +82,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
