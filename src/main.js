@@ -16,7 +16,4 @@ app.use(router);
 app.provide("http", http);
 app.provide("path", path);
 
-// 請在選項式API啟用 (如何使用可以看./src/components/TestComponent.vue)
-// inject: ["http", "path"]
-// 在選項上新增上面的語法後面就可以透過this.path取得物件了
 app.mount("#app");
