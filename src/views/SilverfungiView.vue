@@ -1,6 +1,6 @@
 <template>
-  <div class="container mx-auto">
-    <div class="text-3xl font-bold underline font-[Graphik] py-4">銀光菇分頁font-style-test</div>
+  <div class="container px-2 py-4 mx-auto">
+    <h1 class="underline py-4">銀光菇分頁font-style-test</h1>
     <TestComponent />
   </div>
 </template>

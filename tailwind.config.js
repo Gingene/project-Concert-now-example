@@ -1,4 +1,11 @@
 /** @type {import('tailwindcss').Config} */
+// import colors from "tailwindcss/colors";
+// import plugin from "tailwindcss/plugin";
+const plugin = require("tailwindcss/plugin");
+const { btn, card } = require("./src/assets/tailwind");
+// import { btn } from "./src/assets/tailwind";
+// const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
@@ -21,7 +28,7 @@ export default {
       "gray-light": "#d3dce6",
     },
     fontFamily: {
-      sans: ["Graphik", "sans-serif"],
+      sans: ["Noto Sans TC", "sans-serif"],
       serif: ["Merriweather", "serif"],
     },
     extend: {
@@ -34,5 +41,21 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, theme, addComponents }) {
+      addBase({
+        "*": { lineHeight: 1.5 },
+        h1: { fontSize: theme("fontSize.3xl"), fontWeight: theme("fontWeight.bold"), lineHeight: 1.2 },
+        h2: { fontSize: theme("fontSize.2xl"), fontWeight: theme("fontWeight.bold"), lineHeight: 1.2 },
+        h3: { fontSize: theme("fontSize.xl"), fontWeight: theme("fontWeight.bold"), lineHeight: 1.2 },
+        h4: { fontSize: theme("fontSize.lg"), fontWeight: theme("fontWeight.bold"), lineHeight: 1.2 },
+        h5: { fontWeight: theme("fontWeight.bold"), lineHeight: 1.2 },
+        h6: { fontWeight: theme("fontWeight.bold"), lineHeight: 1.2 },
+      });
+      addComponents({
+        ...btn,
+        ...card,
+      });
+    }),
+  ],
 };

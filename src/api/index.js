@@ -2,6 +2,13 @@ import axios from "axios";
 import Swal from "sweetalert2";
 const { VITE_APP_SERVICE_API } = import.meta.env;
 
+function alertMessage(icon, msg) {
+  Swal.fire({
+    icon: icon,
+    text: msg,
+  });
+}
+
 const http = axios.create({
   baseURL: VITE_APP_SERVICE_API,
   headers: {
@@ -32,28 +39,16 @@ http.interceptors.response.use(
     const { status, statusText } = err.response;
     switch (status) {
       case 401:
-        Swal.fire({
-          icon: "error",
-          text: "請重新登入",
-        });
+        alertMessage("error", "請重新登入");
         break;
       case 403:
-        Swal.fire({
-          icon: "error",
-          text: "權限不足",
-        });
+        alertMessage("error", "權限不足");
         break;
       case 404:
-        Swal.fire({
-          icon: "error",
-          text: "對不起找不到你要的><",
-        });
+        alertMessage("error", "對不起找不到你要的><");
         break;
       default:
-        Swal.fire({
-          icon: "error",
-          text: "發生錯誤了 請看console><",
-        });
+        alertMessage("error", "發生錯誤了 請看console><");
         break;
     }
     return Promise.reject(`狀態碼${status} 錯誤訊息${statusText}`); //必須回傳err，否則axios會拋出錯誤
