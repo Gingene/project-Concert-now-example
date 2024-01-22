@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>登入頁</h1>
+    <h1>登入頁 Login</h1>
     <loginComponent/>
   </div>
 </template>
