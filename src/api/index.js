@@ -38,6 +38,10 @@ http.interceptors.response.use(
   },
   (err) => {
     console.log(err);
+    if (!err.response) {
+      alertMessage("error", "是不是沒有連接伺服器呢? 請看console><");
+      return Promise.reject(err);
+    }
     const { status, statusText } = err.response;
     switch (status) {
       case 401:
@@ -53,7 +57,6 @@ http.interceptors.response.use(
         alertMessage("error", "發生錯誤了 請看console><");
         break;
     }
-    // return Promise.reject(`狀態碼${status} 錯誤訊息${statusText}`); // 必須回傳err，否則axios會拋出錯誤
     return Promise.reject(`狀態碼${status} 錯誤訊息${statusText}`); // 必須回傳err，否則axios會拋出錯誤
   },
 );

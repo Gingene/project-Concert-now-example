@@ -1,48 +1,44 @@
-/** @type {import('tailwindcss').Config} */
-// import colors from "tailwindcss/colors";
-// import plugin from "tailwindcss/plugin";
+const animate = require("tailwindcss-animate");
 const plugin = require("tailwindcss/plugin");
 const { btn, card } = require("./src/assets/tailwind");
-// import { btn } from "./src/assets/tailwind";
-// const defaultTheme = require("tailwindcss/defaultTheme");
 
-export default {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{js,jsx,vue}",
+    "./components/**/*.{js,jsx,vue}",
+    "./app/**/*.{js,jsx,vue}",
+    "./src/**/*.{js,jsx,vue}",
+  ],
   theme: {
-    screens: {
-      sm: "576px",
-      md: "768px",
-      lg: "992px",
-      xl: "1200px",
-      xxl: "1440px",
-    },
-    colors: {
-      blue: "#1fb6ff",
-      purple: "#7e5bef",
-      pink: "#ff49db",
-      orange: "#ff7849",
-      green: "#13ce66",
-      yellow: "#ffc82c",
-      "gray-dark": "#273444",
-      gray: "#8492a6",
-      "gray-light": "#d3dce6",
-    },
-    fontFamily: {
-      sans: ["Noto Sans TC", "sans-serif"],
-      serif: ["Merriweather", "serif"],
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
     },
     extend: {
-      spacing: {
-        128: "32rem",
-        144: "36rem",
+      keyframes: {
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
+        },
       },
-      borderRadius: {
-        "4xl": "2rem",
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
   plugins: [
-    plugin(({ addBase, theme, addComponents }) => {
+    animate,
+    plugin(function ({ addBase, theme, addComponents }) {
       addBase({
         "*": { lineHeight: 1.5 },
         h1: {
