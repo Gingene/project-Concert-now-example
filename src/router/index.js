@@ -23,6 +23,16 @@ const router = createRouter({
       name: "silverfungi",
       component: SilverfungiView,
     },
+    {
+      path: "/concerts",
+      name: "concerts",
+      component: () => import("../views/front/ConcertsView.vue"),
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      name: "notFound",
+      redirect: "/",
+    },
   ],
 });
 

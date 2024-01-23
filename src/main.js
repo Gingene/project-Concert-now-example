@@ -1,9 +1,9 @@
 // import "./assets/main.css";
 import "./assets/scss/main.scss";
-import { http, path } from "./api";
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import { http, path } from "./api";
 
 import App from "./App.vue";
 import router from "./router";

@@ -1,10 +1,11 @@
 import axios from "axios";
 import Swal from "sweetalert2";
+
 const { VITE_APP_SERVICE_API } = import.meta.env;
 
 function alertMessage(icon, msg) {
   Swal.fire({
-    icon: icon,
+    icon,
     text: msg,
   });
 }
@@ -16,13 +17,14 @@ const http = axios.create({
   },
 });
 
+// 攔截器
 http.interceptors.request.use(
   (config) => {
     const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*)|^.*$/, "$1");
     if (token) {
       config.headers.Authorization = token;
     }
-    return config; //必須回傳config，否則axios會拋出錯誤
+    return config; // 必須回傳config，否則axios會拋出錯誤
   },
   (err) => {
     return Promise.reject(err);
@@ -31,7 +33,7 @@ http.interceptors.request.use(
 
 http.interceptors.response.use(
   (res) => {
-    // console.log(res.data);
+    // console.log(res);
     return res;
   },
   (err) => {
@@ -51,7 +53,8 @@ http.interceptors.response.use(
         alertMessage("error", "發生錯誤了 請看console><");
         break;
     }
-    return Promise.reject(`狀態碼${status} 錯誤訊息${statusText}`); //必須回傳err，否則axios會拋出錯誤
+    // return Promise.reject(`狀態碼${status} 錯誤訊息${statusText}`); // 必須回傳err，否則axios會拋出錯誤
+    return Promise.reject(`狀態碼${status} 錯誤訊息${statusText}`); // 必須回傳err，否則axios會拋出錯誤
   },
 );
 

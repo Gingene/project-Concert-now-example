@@ -27,6 +27,8 @@
     "@vue/eslint-config-prettier": "^8.0.0",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-vue": "^9.17.0",
     "postcss": "^8.4.33",
     "prettier": "^3.0.3",

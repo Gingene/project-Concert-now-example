@@ -38,11 +38,15 @@ npm run lint
 
 ### 如何新增自己的網頁:
 
+1. 到./src/views資料夾新增一個XXXXView.vue檔案(名稱隨意)
+2. 到./src/router的index.js中的routes屬性下依照home或about物件新增相同格式的物件(注意要先import 你剛剛建立的XXXXView.vue)
+3. 在App.vue中<nav>標籤下新增一個<RouterLink to="/路徑">自定義路徑名稱</RouterLink>
+4. 到首頁點擊連結是否可以運作
+
+#### 建立元件
+
 1. 請在./src/components資料夾下先新增一個資料夾(預計和頁面名稱一樣)，然後建立.vue檔案(名稱隨意,數量由你決定)
-2. 到./src/views資料夾新增一個XXXVView.vue檔案(名稱隨意)，並將剛剛創的資料夾內的component import進來使用
-3. 到./src/router的index.js中的routes屬性下依照home或about物件新增相同格式的物件(注意要先import 你剛剛建立的component)
-4. 在App.vue中<nav>標籤下新增一個<RouterLink to="/路徑">自定義路徑名稱</RouterLink>
-5. 到首頁點擊連結是否可以運作就OK了
+2. 回到XXXXView.vue，並將剛剛創的資料夾內的component import進來使用
 
 ### 註冊component時出現警告該怎麼辦?
 
