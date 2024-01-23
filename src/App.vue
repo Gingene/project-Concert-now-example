@@ -12,6 +12,8 @@
       <RouterLink to="/about" class="px-4">About</RouterLink>
       <RouterLink to="/silverfungi" class="px-4">銀光菇</RouterLink>
       <RouterLink to="/concerts" class="px-4">演唱會</RouterLink>
+      <RouterLink to="/login" class="px-4">登入</RouterLink>
+
     </nav>
   </header>
   <div class="loading d-none" ref="loadingDom">
