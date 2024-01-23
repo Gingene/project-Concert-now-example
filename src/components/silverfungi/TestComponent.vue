@@ -3,7 +3,7 @@
   <div>
     <h2 class="bg-teal-500">演唱會</h2>
     <div class="flex">
-      <div class="card md:columns-4 gap-[12px]">
+      <div class="card md:columns-4 gap-[24px]">
         <img
           src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="card1" />
@@ -19,7 +19,7 @@
       </div>
     </div>
     <p>
-      <button class="btn btn-blue" @click="getConcerts">獲得演唱會資料</button>
+      <button class="btn btn-blue" @click="getConcertMethod">獲得演唱會資料</button>
     </p>
     {{ concerts }}
   </div>
@@ -37,38 +37,45 @@
   </div>
 </template>
 <script>
+import { mapState, mapActions } from "pinia";
+import { useConcertStore } from "@/stores/concert";
+
 export default {
   name: "TestComponent",
   data() {
     return {
       title: "測試用標題",
-      concerts: [],
       artist: {},
     };
   },
   methods: {
-    getConcerts() {
-      this.loading("找資料中");
-      this.http
-        .get(this.path.concerts)
-        .then((res) => {
-          this.concerts = res.data;
-          this.removeLoading();
-        })
-        .catch((err) => {
-          console.log(err);
-          this.removeLoading();
-        });
-    },
+    // getConcerts() {
+    //   this.loading("找資料中");
+    //   this.http
+    //     .get(this.path.concerts)
+    //     .then((res) => {
+    //       this.concerts = res.data;
+    //       this.removeLoading();
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //       this.removeLoading();
+    //     });
+    // },
+    ...mapActions(useConcertStore, ["getConcertMethod"]),
 
     async getSingleArtist() {
       try {
         const res = await this.http.get(`${this.path.artists}/1`);
         this.artist = res.data;
+        // console.log(a);
       } catch (err) {
         // console.log(err);
       }
     },
+  },
+  computed: {
+    ...mapState(useConcertStore, ["concerts"]),
   },
   inject: ["http", "path", "loading", "removeLoading"],
   mounted() {
