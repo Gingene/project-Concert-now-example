@@ -7,10 +7,14 @@ const props = defineProps({
 </script>
 
 <template>
-  <caption
-    :class="cn('mt-4 text-sm text-gray-900 dark:text-slate-400', props.class)"
-    class="mt-4 text-sm text-gray-900 dark:text-slate-400"
+  <div
+    :class="
+      cn(
+        'flex flex-col space-y-2 sm:space-y-0 mt-1.5 sm:flex-row sm:justify-end sm:space-x-2',
+        props.class
+      )
+    "
   >
     <slot />
-  </caption>
+  </div>
 </template>
