@@ -51,7 +51,9 @@ import {
 
 <script>
 import AdminSideBar from "@/components/admin/AdminSideBar.vue";
-export default {};
+export default {
+  components: { AdminSideBar },
+};
 </script>
 
 <template>
