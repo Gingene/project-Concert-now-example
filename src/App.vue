@@ -13,6 +13,7 @@
       <RouterLink to="/silverfungi" class="px-4">銀光菇</RouterLink>
       <RouterLink to="/concerts" class="px-4">演唱會</RouterLink>
       <RouterLink to="/login" class="px-4">登入</RouterLink>
+      <RouterLink to="/shadcn" class="px-4">Shadcn</RouterLink>
 
     </nav>
   </header>

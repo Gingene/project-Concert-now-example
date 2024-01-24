@@ -39,6 +39,11 @@ const router = createRouter({
       name: "login",
       component: LoginView,
     },
+    {
+      path: "/shadcn",
+      name: "shadcn",
+      component: () => import("../views/front/ShadcnView.vue"),
+    },
   ],
 });
 

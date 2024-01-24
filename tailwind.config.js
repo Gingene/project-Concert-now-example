@@ -34,6 +34,13 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      colors:{
+        "primary": "#F6F7FE",
+        "secondary": "#F58C93",
+        "purple-primary": "#5858B9",
+        "purple-secondary": "#7090F6",
+        "purple-light": "#E8EDFE",
+      }
     },
   },
   plugins: [
