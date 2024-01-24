@@ -6,13 +6,15 @@
   </div>
   <Button variant="destructive"> Destructive </Button>
 </template>
+
+<script setup>
+import { Button } from "@/components/ui/button";
+</script>
 <script>
 import { mapActions, mapState } from "pinia";
 import { useConcertStore } from "@/stores/concert";
-import { Button } from "@/components/ui/button";
 
 export default {
-  components: { Button },
   inject: ["http", "path"],
   methods: {
     ...mapActions(useConcertStore, ["getConcertMethod"]),
